@@ -1,0 +1,22 @@
+.cream-cheese-section {
+  padding: 10px;
+  border: 2px solid #4CAF50;
+  border-radius: 8px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.add-ons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.add-on-item {
+  padding: 8px;
+  border: 1px solid #4CAF50;
+  border-radius: 5px;
+  background-color: #ffffff;
+  font-size: 14px;
+}

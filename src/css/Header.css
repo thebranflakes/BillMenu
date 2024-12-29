@@ -1,0 +1,10 @@
+.header {
+    width: 100%;
+    padding: 20px;
+    background-color: #4CAF50; /* Green color from the logo */
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  

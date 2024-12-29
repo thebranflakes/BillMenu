@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './css/global.css';
+import Header from './components/Header';
+import BagelsRow from './components/BagelsRow';
+import CreamCheeseAndAddOns from './components/CreamCheeseAndAddOns';
+import BreakfastSandwiches from './components/BreakfastSandwiches';
+import SpecialtySandwiches from './components/SpecialtySandwiches';
+import CoffeeAndShirts from './components/CoffeeAndShirts';
+import Footer from './components/Footer';
+import { menuData } from './data'; // Import menu data
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Header />
+      <BagelsRow bagels={menuData.bagels} />
+      <CreamCheeseAndAddOns items={menuData.creamCheeseAndAddOns} />
+      <BreakfastSandwiches sandwiches={menuData.breakfastSandwiches} />
+      <SpecialtySandwiches sandwiches={menuData.specialtySandwiches} />
+      <CoffeeAndShirts />
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
