@@ -1,18 +1,17 @@
-import { menuData } from "../data.js";
-import React from 'react';
-import '../css/CreamCheeseAndAddOns.css';
-
 const CreamCheeseAndAddOns = ({ items }) => {
-  return (
-    <div className="cream-cheese-section">
-      <h2>Cream Cheese & Add-Ons</h2>
-      <div className="add-ons">
-        {items.map((item) => (
-          <div key={item} className="add-on-item">{item}</div>
-        ))}
+    if (!items || items.length === 0) return <p>No items available</p>;
+  
+    return (
+      <div>
+        <h2>Cream Cheese & Add-Ons</h2>
+        <ul>
+          {items.map((item, index) => (
+            <li key={index}>{item.name}</li>
+          ))}
+        </ul>
       </div>
-    </div>
-  );
-};
-
-export default CreamCheeseAndAddOns;
+    );
+  };
+  
+  export default CreamCheeseAndAddOns;
+  

@@ -1,38 +1,14 @@
-.bagels-row {
+.bagels-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 10px;
   }
   
   .bagel-item {
-    padding: 8px 12px;
-    margin: 5px;
-    border: 1px solid #4CAF50;
-    border-radius: 5px;
-    background-color: #ffffff;
-    font-size: 16px;
-    font-weight: bold;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .bagel-item.sold-out {
-    background-color: #d3d3d3; /* Gray for sold-out items */
-    color: #ffffff;
-    position: relative;
-  }
-  
-  .bagel-item.sold-out::after {
-    content: "SOLD OUT";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 14px;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 2px 6px;
-    border-radius: 3px;
+    border: 2px solid #006400;
+    padding: 10px;
+    background-color: #fff;
+    font-size: 18px;
+    text-align: center;
   }
   

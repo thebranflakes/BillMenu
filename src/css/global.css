@@ -1,28 +1,37 @@
 /* global.css */
 body {
-  font-family: 'Helvetica', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5; /* Light background */
-  color: #000; /* Default text color */
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
+  display: grid;
+  grid-template-areas:
+    "bagels sandwiches specialties"
+    "addons sandwiches coffee";
+  grid-gap: 20px;
   padding: 20px;
-  max-width: 1200px; /* Constrain width */
 }
 
-.compartment {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 2px solid #4CAF50; /* Main green color */
-  border-radius: 8px;
-  background-color: white;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
+.bagels {
+  grid-area: bagels;
+}
+
+.sandwiches {
+  grid-area: sandwiches;
+}
+
+.specialties {
+  grid-area: specialties;
+}
+
+.addons {
+  grid-area: addons;
+}
+
+.coffee {
+  grid-area: coffee;
 }

@@ -7,17 +7,42 @@ import BreakfastSandwiches from './components/BreakfastSandwiches';
 import SpecialtySandwiches from './components/SpecialtySandwiches';
 import CoffeeAndShirts from './components/CoffeeAndShirts';
 import Footer from './components/Footer';
-import { menuData } from './data'; // Import menu data
+import { menuData } from './data';
 
 const App = () => {
   return (
     <div className="container">
-      <Header />
-      <BagelsRow bagels={menuData.bagels} />
-      <CreamCheeseAndAddOns items={menuData.creamCheeseAndAddOns} />
-      <BreakfastSandwiches sandwiches={menuData.breakfastSandwiches} />
-      <SpecialtySandwiches sandwiches={menuData.specialtySandwiches} />
-      <CoffeeAndShirts />
+      {/* Bagels Section */}
+      <div className="bagels">
+        <Header />
+        <BagelsRow bagels={menuData.bagels} />
+        <CreamCheeseAndAddOns items={menuData.creamCheeseAndAddOns} />
+      </div>
+
+      {/* Sandwiches Section */}
+      <div className="sandwiches">
+        <h2>Sandwiches</h2>
+        <BreakfastSandwiches sandwiches={menuData.breakfastSandwiches} />
+      </div>
+
+      {/* Specialties Section */}
+      <div className="specialties">
+        <h2>Specialties</h2>
+        <SpecialtySandwiches sandwiches={menuData.specialtySandwiches} />
+      </div>
+
+      {/* Add-Ons Section */}
+      <div className="addons">
+        <h2>Add-Ons</h2>
+        <CreamCheeseAndAddOns items={menuData.addOns} />
+      </div>
+
+      {/* Coffee and Extras Section */}
+      <div className="coffee">
+        <CoffeeAndShirts />
+      </div>
+
+      {/* Footer */}
       <Footer />
     </div>
   );

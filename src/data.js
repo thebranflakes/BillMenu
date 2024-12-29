@@ -1,7 +1,11 @@
 export const menuData = {
-    bagels: ["Plain", "Salt", "Sesame", "Everything", "Asiago", "Cheddar Everything"],
-    creamCheeseAndAddOns: ["Plain Cream Cheese", "Flavored Cream Cheese", "Add-Ons"],
-    breakfastSandwiches: ["Egg & Cheese", "Meat, Egg & Cheese"],
-    specialtySandwiches: ["BLT", "Turkey Club", "Italian"],
-    coffeeAndShirts: ["Precipe Coffee", "T-Shirts"],
-};
+    bagels: [
+      { name: 'Plain', price: 1.0 },
+      { name: 'Sesame', price: 1.5 },
+      { name: 'Everything', price: 2.0 },
+    ],
+    creamCheeseAndAddOns: [
+      { name: 'Plain Cream Cheese', price: 0.5 },
+      { name: 'Flavored Cream Cheese', price: 0.75 },
+    ],
+  };

@@ -1,15 +1,17 @@
-import { menuData } from "../data.js";
-import React from 'react';
-import '../css/SpecialtySandwiches.css';
-
 const SpecialtySandwiches = ({ sandwiches }) => {
-  return (
-    <div className="specialty-sandwiches">
-      {sandwiches.map((sandwich) => (
-        <div key={sandwich} className="sandwich-item">{sandwich}</div>
-      ))}
-    </div>
-  );
-};
-
-export default SpecialtySandwiches;
+    if (!sandwiches || sandwiches.length === 0) return <p>No specialty sandwiches available</p>;
+  
+    return (
+      <div>
+        <h2>Specialty Sandwiches</h2>
+        <ul>
+          {sandwiches.map((sandwich, index) => (
+            <li key={index}>{sandwich.name}</li>
+          ))}
+        </ul>
+      </div>
+    );
+  };
+  
+  export default SpecialtySandwiches;
+  
