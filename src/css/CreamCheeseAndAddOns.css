@@ -1,22 +1,59 @@
-.cream-cheese-section {
-  padding: 10px;
-  border: 2px solid #4CAF50;
+.addons {
+  grid-area: addons;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  overflow: hidden; /* Prevent overflow issues */
+}
+
+.section-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
   border-radius: 8px;
-  background-color: #ffffff;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align items to the top */
+  align-items: center; /* Center horizontally */
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: auto; /* Allow dynamic height adjustment */
+  max-height: 100%; /* Prevent overflow */
+  box-sizing: border-box; /* Include padding in height calculations */
+}
+
+.cream-cheese-section,
+.toppings-section {
+  width: 100%; /* Ensure sections fit the container width */
+  margin-bottom: 10px; /* Add spacing between sections */
+}
+
+.cream-cheese-list,
+.toppings-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping of items */
+  justify-content: center; /* Center items in their container */
+  gap: 5px; /* Add space between items */
+}
+
+.cream-cheese-item,
+.topping-item {
+  background-color: #f3f3f3;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 0.85rem; /* Smaller text size for compact fit */
+  white-space: nowrap; /* Prevent text wrapping */
   text-align: center;
 }
 
-.add-ons {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+.cream-cheese-item:hover,
+.topping-item:hover {
+  background-color: #e8e8e8; /* Subtle hover effect */
 }
 
-.add-on-item {
-  padding: 8px;
-  border: 1px solid #4CAF50;
-  border-radius: 5px;
-  background-color: #ffffff;
-  font-size: 14px;
-}
+

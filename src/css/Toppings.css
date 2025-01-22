@@ -1,0 +1,11 @@
+.toppings-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .topping-item {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  

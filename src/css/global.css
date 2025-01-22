@@ -1,37 +1,48 @@
-/* global.css */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-}
-
 .container {
   display: grid;
+  height: 95vh; /* Overall container height */
   grid-template-areas:
-    "bagels sandwiches specialties"
-    "addons sandwiches coffee";
-  grid-gap: 20px;
-  padding: 20px;
+    "bagels logo breakfast"
+    "addons specials premium";
+  grid-template-rows: 1fr 1fr; /* Two equal rows */
+  grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+  gap: 15px; /* Consistent spacing */
+  padding: 15px;
+  box-sizing: border-box;
 }
 
-.bagels {
-  grid-area: bagels;
+.bagels, .addons, .premium, .breakfast, .specials, .logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+
+  /* Enforce same size for all boxes */
+  height: 280px; /* Set fixed height */
+  width: 320px; /* Set fixed width */
+  max-width: 100%; /* Prevent overflow */
 }
 
-.sandwiches {
-  grid-area: sandwiches;
+.section-card {
+  width: 100%; /* Ensure full use of parent container */
+  height: 100%; /* Ensure uniform height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; /* Adjust padding for text fit */
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent content overflow */
 }
 
-.specialties {
-  grid-area: specialties;
-}
-
-.addons {
-  grid-area: addons;
-}
-
-.coffee {
-  grid-area: coffee;
+.bagels .section-card,
+.addons .section-card,
+.premium .section-card,
+.breakfast .section-card,
+.specials .section-card {
+  /* Ensure all section contents fit nicely */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

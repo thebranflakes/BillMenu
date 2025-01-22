@@ -1,0 +1,40 @@
+.premium-sandwiches {
+  display: grid;
+  grid-template-areas:
+    "turkey-club turkey-club"
+    "blt italian";
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.sandwich-card {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.sandwich-card h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.sandwich-card p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Specific sandwich positions */
+.sandwich-card.turkey-club {
+  grid-area: turkey-club;
+}
+
+.sandwich-card.blt {
+  grid-area: blt;
+}
+
+.sandwich-card.italian {
+  grid-area: italian;
+}

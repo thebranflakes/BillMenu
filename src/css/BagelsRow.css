@@ -1,14 +1,33 @@
 .bagels-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  
-  .bagel-item {
-    border: 2px solid #006400;
-    padding: 10px;
-    background-color: #fff;
-    font-size: 18px;
-    text-align: center;
-  }
-  
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjust min-width as needed */
+  gap: 15px; /* Space between items */
+  max-width: 90%; /* Restrict width to prevent items from stretching too wide */
+  justify-content: center; /* Centers the grid in its container */
+  align-items: center;
+}
+
+.bagel-item {
+  font-size: 1rem;
+  padding: 10px 15px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.bagel-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.bagels-row button {
+  padding: 6px 12px; /* Slightly smaller padding */
+  margin: 3px 0; /* Reduce margin between buttons */
+  font-size: 13px; /* Adjust font size for balance */
+  border-radius: 4px; /* Keep consistent border radius */
+}
