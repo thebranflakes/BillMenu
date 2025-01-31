@@ -1,10 +1,42 @@
+.premium {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.premium .section-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.premium .section-title {
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 0 10px;
+  font-weight: bold;
+  font-size: 44px;
+  z-index: 1;
+  white-space: nowrap;
+}
+
 .premium-sandwiches {
   display: grid;
   grid-template-areas:
     "turkey-club turkey-club"
     "blt italian";
   grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: 15px;
+  width: 100%;
+  padding: 10px 0;
 }
 
 .sandwich-card {
@@ -12,10 +44,11 @@
   padding: 15px;
   border: 1px solid #ccc;
   border-radius: 8px;
+  text-align: center;
 }
 
 .sandwich-card h3 {
-  margin: 0;
+  margin: 0 0 5px 0;
   font-size: 18px;
   color: #333;
 }

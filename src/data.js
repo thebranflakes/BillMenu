@@ -11,9 +11,10 @@ export const menuData = {
       { name: 'Spent Grain', price: 2.0 },
     ],
     creamCheeseAndMore: [
-      { name: 'Plain Cream Cheese', price: 4.00 },
-      { name: 'Scallion Cream Cheese', price: 5.00 },
-      { name: 'Spicy Everything Cream Cheese', price: 5.00 },
+      { name: 'Plain', price: 4.00 },
+      { name: 'Scallion', price: 5.00 },
+      { name: 'Maine Maple', price: 5.00 },
+      { name: 'Spicy Everything', price: 5.00 },
       { name: 'Butter or Earth Balance', price: 3.75 },
     ],
     toppings: [

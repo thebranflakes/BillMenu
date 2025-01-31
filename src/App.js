@@ -10,7 +10,7 @@ import { menuData } from './data';
 
 const App = () => {
   return (
-    <div className="container">
+    <div className="parent-grid">
       {/* Bagels Section */}
       <div className="bagels section-card">
         <BagelsRow bagels={menuData.bagels} />
@@ -18,7 +18,7 @@ const App = () => {
 
       {/* Logo Section */}
       <div className="logo section-card">
-        <h1>BB</h1>
+        <img src={require('./assets/bill_logo.png')} alt="Bill's Bagels Logo" className="logo-image" />
       </div>
 
       {/* Breakfast Sandwiches Section */}

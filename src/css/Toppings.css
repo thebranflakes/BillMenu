@@ -1,11 +1,47 @@
+/* General Section Styling */
+.section {
+  position: relative;
+  padding: 15px 10px; /* Adjusted padding for spacing */
+  border: 1px solid black; /* Consistent border */
+  border-radius: 12px; /* Rounded corners for a modern look */
+  margin: 8px 0; /* Consistent spacing between sections */
+  text-align: center; /* Center align the content */
+  background-color: #fff; /* White background to match the theme */
+  box-sizing: border-box; /* Include padding and border in sizing */
+}
+
+/* Title Styling */
+.toppings-title {
+  position: absolute;
+  top: -18px; /* Position title above the border */
+  left: 50%;
+  transform: translateX(-50%); /* Center align horizontally */
+  background: white; /* Match the background color */
+  padding: 0 12px; /* Spacing for text */
+  font-weight: bold; /* Bold title text */
+  font-size: 22px; /* Adjusted font size */
+  white-space: nowrap; /* Prevent title wrapping */
+}
+
+/* Toppings List Styling */
 .toppings-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .topping-item {
-    font-size: 16px;
-    margin: 5px 0;
-  }
-  
+  list-style: none; /* Remove default bullet points */
+  padding: 0; /* Remove padding */
+  margin: 12px 0 0 0; /* Reduced margin for compact layout */
+  display: flex; /* Flex display for alignment */
+  flex-wrap: wrap; /* Allow items to wrap to the next row */
+  justify-content: center; /* Center align the items */
+  gap: 8px; /* Consistent spacing between items */
+}
+
+/* Topping Item Styling */
+.topping-item {
+  font-size: 12px; /* Compact font size */
+  padding: 5px 10px; /* Adjusted padding for compactness */
+  background-color: #f3f3f3; /* Light background for contrast */
+  border: 1px solid #ddd; /* Subtle border for distinction */
+  border-radius: 6px; /* Rounded corners for a clean look */
+  text-align: center; /* Center text */
+  white-space: nowrap; /* Prevent text wrapping within items */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}

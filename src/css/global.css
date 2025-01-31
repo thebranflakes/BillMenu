@@ -1,48 +1,66 @@
-.container {
+.parent-grid {
   display: grid;
-  height: 95vh; /* Overall container height */
   grid-template-areas:
     "bagels logo breakfast"
-    "addons specials premium";
-  grid-template-rows: 1fr 1fr; /* Two equal rows */
-  grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
-  gap: 15px; /* Consistent spacing */
-  padding: 15px;
-  box-sizing: border-box;
+    "addons coffee premium";
+  grid-template-columns: 2fr 2fr 2fr; /* Adjust column proportions */
+  grid-template-rows: 1fr 1fr; /* Make both rows equal height */
+  gap: 20px; /* Space between sections */
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  padding: 20px;
+  box-sizing: border-box; /* Include padding and borders in width/height */
 }
 
-.bagels, .addons, .premium, .breakfast, .specials, .logo {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-
-  /* Enforce same size for all boxes */
-  height: 280px; /* Set fixed height */
-  width: 320px; /* Set fixed width */
-  max-width: 100%; /* Prevent overflow */
+/* Assigning areas */
+.bagels {
+  grid-area: bagels;
 }
 
+.logo {
+  grid-area: logo;
+}
+
+.coffee {
+  grid-area: coffee;
+}
+
+.breakfast {
+  grid-area: breakfast;
+}
+
+.addons {
+  grid-area: addons;
+}
+
+.premium {
+  grid-area: premium;
+}
+
+/* Shared styles for all sections */
 .section-card {
-  width: 100%; /* Ensure full use of parent container */
-  height: 100%; /* Ensure uniform height */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px; /* Adjust padding for text fit */
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 12px;
+  background-color: white;
   box-sizing: border-box;
-  overflow: hidden; /* Prevent content overflow */
 }
 
-.bagels .section-card,
-.addons .section-card,
-.premium .section-card,
-.breakfast .section-card,
-.specials .section-card {
-  /* Ensure all section contents fit nicely */
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.parent-grid .section-title {
+  position: absolute;
+  top: -15px; /* Adjust to break the border */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 0 10px;
+  font-weight: bold;
+  font-size: 44px; /* Matches Bagels font size */
+  line-height: 1;
+  z-index: 1;
+  white-space: nowrap;
+  text-align: center;
 }

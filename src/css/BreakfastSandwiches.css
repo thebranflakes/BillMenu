@@ -1,35 +1,84 @@
-.sandwich-list {
-  list-style: none;
+/* Breakfast Sandwiches Section Styles */
+.breakfast {
+  grid-area: breakfast;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+}
+
+.breakfast .section-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 12px;
+  box-sizing: border-box;
+  background-color: white;
+  overflow: visible;
+}
+
+.breakfast .section-title {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 0 10px;
+  font-weight: bold;
+  font-size: 44px;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.breakfast .sandwich-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
   padding: 0;
-  margin-bottom: 20px;
+  margin: 0;
+  list-style: none;
 }
 
-.sandwich-item {
-  font-size: 16px;
-  margin: 5px 0;
-}
-
-.subsections {
+.breakfast .subsections {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  width: 100%;
+  gap: 15px;
 }
 
-.meats-section, .cheeses-section {
-  width: 45%;
+.breakfast .meats-section,
+.breakfast .cheeses-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #f9f9f9;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
-.meats-list, .cheeses-list {
+.breakfast .subsection-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.breakfast .subsection-list {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-.meat-item, .cheese-item {
-  font-size: 14px;
-  margin: 5px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }

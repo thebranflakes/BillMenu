@@ -5,9 +5,9 @@ import Toppings from './Toppings';
 
 const CreamCheeseAndAddOns = ({ creamCheeseAndMore, toppings }) => {
   return (
-    <div className="section-card">
-      <h2>Add-Ons</h2>
-      <div className="addons-section">
+    <div className="addons">
+      <div className="section-title">Add-Ons</div>
+      <div className="addons-card">
         {/* Cream Cheese Section */}
         <div className="cream-cheese-section">
           <h3>Cream Cheese & More</h3>
@@ -18,11 +18,10 @@ const CreamCheeseAndAddOns = ({ creamCheeseAndMore, toppings }) => {
               </li>
             ))}
           </ul>
-        </div>
-
-        {/* Toppings Section */}
-        <div className="toppings-section">
+            {/* Toppings Section */}
+          <div className="toppings-section">
           <Toppings toppings={toppings} />
+        </div>
         </div>
       </div>
     </div>

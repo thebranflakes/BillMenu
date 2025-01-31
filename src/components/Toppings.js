@@ -5,8 +5,8 @@ const Toppings = ({ toppings }) => {
   if (!toppings || toppings.length === 0) return <p>No toppings available</p>;
 
   return (
-    <div>
-      <h3>Toppings</h3>
+    <div className="section">
+      <div className="toppings-title">Toppings</div>
       <ul className="toppings-list">
         {toppings.map((topping, index) => (
           <li key={index} className="topping-item">

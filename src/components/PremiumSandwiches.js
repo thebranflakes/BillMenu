@@ -4,7 +4,7 @@ import '../css/PremiumSandwiches.css';
 const PremiumSandwiches = ({ sandwiches }) => {
   return (
     <div className="section-card">
-      <h2>Premium Sandwiches</h2>
+      <h2 className="section-title">Premium Sandwiches</h2>
       <div className="premium-sandwiches">
         {sandwiches.map((sandwich, index) => (
           <div
