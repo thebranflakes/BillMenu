@@ -6,7 +6,7 @@
   border-radius: 12px; /* Rounded corners for a modern look */
   margin: 8px 0; /* Consistent spacing between sections */
   text-align: center; /* Center align the content */
-  background-color: #fff; /* White background to match the theme */
+  background-color: #E6F4E6; /* White background to match the theme */
   box-sizing: border-box; /* Include padding and border in sizing */
 }
 
@@ -16,7 +16,7 @@
   top: -18px; /* Position title above the border */
   left: 50%;
   transform: translateX(-50%); /* Center align horizontally */
-  background: white; /* Match the background color */
+  background: #E6F4E6; /* Match the background color */
   padding: 0 12px; /* Spacing for text */
   font-weight: bold; /* Bold title text */
   font-size: 22px; /* Adjusted font size */

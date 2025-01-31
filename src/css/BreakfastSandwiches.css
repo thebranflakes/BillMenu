@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   overflow: visible;
+  background-color: #E6F4E6;
 }
 
 .breakfast .section-card {
@@ -21,7 +22,7 @@
   border: 2px solid black;
   border-radius: 12px;
   box-sizing: border-box;
-  background-color: white;
+  background-color: #E6F4E6;
   overflow: visible;
 }
 
@@ -30,7 +31,7 @@
   top: -20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: white;
+  background-color: #E6F4E6;
   padding: 0 10px;
   font-weight: bold;
   font-size: 44px;
