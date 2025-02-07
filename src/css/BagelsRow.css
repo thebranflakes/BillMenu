@@ -1,48 +1,74 @@
-/* Bagels Section Styles */
 .bagels {
+  grid-area: bagels;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #E6F4E6;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 12px;
+  box-sizing: border-box;
 }
 
 .bagels .section-card {
   width: 100%;
   height: 100%;
+  background-color: #E6F4E6;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* Align items to the top */
   align-items: center;
-  background-color: #E6F4E6;
+  padding: 20px;
+  box-sizing: border-box;
+  gap: 10px; /* Reduced gap for better use of space */
 }
 
 .bagels .section-title {
-  position: absolute;
-  top: 2px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #E6F4E6;
-  padding: 0 10px;
-  font-weight: bold;
   font-size: 44px;
+  font-weight: bold;
+  font-family: 'Chicle', sans-serif;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
-.bagels-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
+.bagels .bagels-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Smaller min size for more items in a row */
+  row-gap: 30px; /* Increased gap for better vertical spacing */
+  justify-items: center;
+  align-items: center;
+  width: 100%;
   padding: 0;
   margin: 0;
   list-style: none;
+  box-sizing: border-box;
+  height: 100%; /* Stretch to fill available height */
 }
 
-.bagel-item {
-  padding: 6px 12px;
-  background-color: #f8f9fa;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 14px;
+.bagels .bagel-item {
+  position: relative;
+  font-size: 24px;
+  font-weight: bold;
   text-align: center;
+  color: #333;
+  font-family: 'Chicle', sans-serif;
+  line-height: 1.8; /* Increased line height for vertical stretch */
+}
+
+.bagels .bagel-item.out-of-stock {
+  color: gray; /* Fade the text */
+}
+
+.bagels .bagel-item.out-of-stock .sold-out-overlay {
+  position: absolute;
+  top: 50%; /* Center the image */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Adjust for centering */
+  width: 100%; /* Adjust the width to fit the parent */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 1;
+  pointer-events: none; /* Allow clicks to pass through */
+  opacity: 0.8; /* Slight transparency for visibility */
 }

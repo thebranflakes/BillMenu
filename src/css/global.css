@@ -83,3 +83,10 @@ body {
   border-radius: 12px; /* Keep rounded corners */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
 }
+
+@font-face {
+  font-family: 'Chicle';
+  src: url('../fonts/Chicle-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

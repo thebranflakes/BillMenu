@@ -40,7 +40,7 @@ const App = () => {
 
       {/* Coffee & Extras Section */}
       <div className="coffee section-card">
-        <CoffeeAndShirts />
+        <CoffeeAndShirts extras={menuData.extras}/>
       </div>
 
       {/* Premium Sandwiches Section */}

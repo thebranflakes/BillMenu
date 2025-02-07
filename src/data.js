@@ -1,14 +1,15 @@
 export const menuData = {
     bagels: [
-      { name: 'Plain', price: 1.0 },
-      { name: 'Salt', price: 1.5 },
-      { name: 'Sesame', price: 1.5 },
-      { name: 'Everything', price: 1.5 },
-      { name: 'Asiago', price: 1.5 },
-      { name: 'Cheddar Everything', price: 1.5 },
-      { name: 'Onion', price: 1.5 },
-      { name: 'Jalapeno Cheddar', price: 1.5 },
-      { name: 'Spent Grain', price: 2.0 },
+      { name: 'Plain', stock: 1 },
+      { name: 'Salt', stock: 1 },
+      { name: 'Sesame', stock: 1 },
+      { name: 'Everything', stock: 1 },
+      { name: 'Asiago', stock: 1 },
+      { name: 'Cheddar Everything', stock: 1 },
+      { name: 'Onion', stock: 1 },
+      { name: 'Jalapeno Cheddar', stock: 0 },
+      { name: 'Spent Grain', stock: 1 },
+      
     ],
     creamCheeseAndMore: [
       { name: 'Plain', price: 4.00 },
@@ -73,5 +74,13 @@ export const menuData = {
           { type: 'Whole Roll', price: 18.0 },
         ],
       },
+      
+    ],
+    extras: [
+      { name: 'Precipice Coffee', price: 0},
+      { name: 'Hot', price: 2.0 },
+      { name: 'Cold Brew', price: 4.0 },
+      { name: 'Bagel Chips', price: 8.0 },
+      { name: 'Shirts', price: 20.0 },
     ],
   };

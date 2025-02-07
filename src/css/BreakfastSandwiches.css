@@ -1,85 +1,86 @@
-/* Breakfast Sandwiches Section Styles */
 .breakfast {
   grid-area: breakfast;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: visible;
   background-color: #E6F4E6;
-}
-
-.breakfast .section-card {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  justify-content: center;
-  align-items: center;
   padding: 20px;
   border: 2px solid black;
   border-radius: 12px;
   box-sizing: border-box;
+}
+
+.breakfast .section-card {
+  width: 100%;
+  height: 100%;
   background-color: #E6F4E6;
-  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align items to the top */
+  align-items: center;
+  gap: 40px; /* Space between elements */
+  padding: 50px;
+  box-sizing: border-box;
 }
 
 .breakfast .section-title {
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #E6F4E6;
-  padding: 0 10px;
+  font-size: 44px; /* Title size */
   font-weight: bold;
-  font-size: 44px;
-  z-index: 1;
-  white-space: nowrap;
+  font-family: 'Chicle', sans-serif;
+  margin-top: 20px; /* Adjust spacing above the title */
+  margin-bottom: 15px; /* Space below the title */
+  text-align: center;
 }
 
 .breakfast .sandwich-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  padding: 0;
-  margin: 0;
   list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0; /* Margin below the sandwich list */
+  font-size: 18px; /* Highlight sandwich options */
+  text-align: center;
 }
 
 .breakfast .subsections {
   display: flex;
   justify-content: space-between;
+  gap: 20px; /* Space between the Meats and Cheeses sections */
   width: 100%;
-  gap: 15px;
 }
 
-.breakfast .meats-section,
-.breakfast .cheeses-section {
-  flex: 1;
+.breakfast .meats-section {
+  flex: 2; /* Occupy 2/3 width */
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px solid #ccc;
   background-color: #f9f9f9;
   padding: 10px;
-  border: 1px solid #ccc;
   border-radius: 8px;
 }
 
-.breakfast .subsection-title {
-  font-weight: bold;
-  margin-bottom: 10px;
-  font-size: 16px;
-  text-align: center;
-}
-
-.breakfast .subsection-list {
+.breakfast .meats-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 10px;
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.breakfast .cheeses-section {
+  flex: 1; /* Occupy 1/3 width */
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  align-items: center;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.breakfast .cheeses-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }

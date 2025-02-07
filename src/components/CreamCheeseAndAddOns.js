@@ -6,18 +6,19 @@ import Toppings from './Toppings';
 const CreamCheeseAndAddOns = ({ creamCheeseAndMore, toppings }) => {
   return (
     <div className="addons">
-      <div className="section-title">Add-Ons</div>
+      <div className="section-title">Cream Cheese & More</div>
       <div className="addons-card">
         {/* Cream Cheese Section */}
         <div className="cream-cheese-section">
-          <h3>Cream Cheese & More</h3>
-          <ul className="cream-cheese-list">
-            {creamCheeseAndMore.map((item, index) => (
-              <li key={index} className="cream-cheese-item">
-                {item.name} - ${item.price.toFixed(2)}
-              </li>
-            ))}
-          </ul>
+        <ul className="cream-cheese-list">
+          {creamCheeseAndMore.map((option, index) => (
+            <li key={index} className="cream-cheese-item">
+              <span>{option.name}</span>
+              <span className="dots"></span>
+              <span>${option.price.toFixed(2)}</span>
+            </li>
+          ))}
+        </ul>
             {/* Toppings Section */}
           <div className="toppings-section">
           <Toppings toppings={toppings} />

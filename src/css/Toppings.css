@@ -18,8 +18,9 @@
   transform: translateX(-50%); /* Center align horizontally */
   background: #E6F4E6; /* Match the background color */
   padding: 0 12px; /* Spacing for text */
+  font-family: 'Chicle', sans-serif;
   font-weight: bold; /* Bold title text */
-  font-size: 22px; /* Adjusted font size */
+  font-size: 30px; /* Adjusted font size */
   white-space: nowrap; /* Prevent title wrapping */
 }
 
@@ -36,7 +37,7 @@
 
 /* Topping Item Styling */
 .topping-item {
-  font-size: 12px; /* Compact font size */
+  font-size: 15px; /* Compact font size */
   padding: 5px 10px; /* Adjusted padding for compactness */
   background-color: #f3f3f3; /* Light background for contrast */
   border: 1px solid #ddd; /* Subtle border for distinction */
