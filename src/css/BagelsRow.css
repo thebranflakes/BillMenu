@@ -31,6 +31,7 @@
   margin-top: 20px;
   margin-bottom: 15px;
   text-align: center;
+  text-shadow: -1px -1px 0 #42823d, 1px -1px 0 #42823d, -1px 1px 0 #42823d, 1px 1px 0 #42823d;
 }
 
 .bagels .bagels-list {
@@ -52,7 +53,7 @@
   font-size: 24px;
   font-weight: bold;
   text-align: center;
-  color: #333;
+  color: black;
   font-family: 'Chicle', sans-serif;
   line-height: 1.8; /* Increased line height for vertical stretch */
 }
@@ -71,4 +72,34 @@
   z-index: 1;
   pointer-events: none; /* Allow clicks to pass through */
   opacity: 0.8; /* Slight transparency for visibility */
+}
+
+.bagels-pricing-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 15px; /* Adjusted to push it down */
+}
+
+.bagels-pricing {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  background: #E6F4E6;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 12px;
+  width: 100%; /* Adjust width as needed */
+  max-width: 600px; /* Prevent it from stretching too wide */
+  text-align: center;
+}
+
+.bagel-price-item {
+  font-family: 'Chicle', sans-serif;
+  font-size: 18px;
+  background: #f3f3f3;
+  padding: 5px 10px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }

@@ -6,6 +6,7 @@ import CreamCheeseAndAddOns from './components/CreamCheeseAndAddOns';
 import BreakfastSandwiches from './components/BreakfastSandwiches';
 import PremiumSandwiches from './components/PremiumSandwiches';
 import CoffeeAndShirts from './components/CoffeeAndShirts';
+import Logo from './components/Logo';
 import { menuData } from './data';
 
 const App = () => {
@@ -13,12 +14,12 @@ const App = () => {
     <div className="parent-grid">
       {/* Bagels Section */}
       <div className="bagels section-card">
-        <BagelsRow bagels={menuData.bagels} />
+        <BagelsRow bagels={menuData.bagels} bagelPrices={menuData.bagelPrices} />
       </div>
 
       {/* Logo Section */}
       <div className="logo section-card">
-        <img src={require('./assets/bill_logo.png')} alt="Bill's Bagels Logo" className="logo-image" />
+        <Logo />
       </div>
 
       {/* Breakfast Sandwiches Section */}

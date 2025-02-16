@@ -1,0 +1,22 @@
+.carousel-container {
+    width: 100%;
+    max-width: 525px; /* Adjust as needed */
+    margin: 0 auto;
+  }
+  
+  .carousel-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* Adjust height as needed */
+  }
+  
+  .carousel-image {
+    width: 100%;
+    max-width: 180px; /* Ensures 3 images fit comfortably */
+    height: auto;
+    object-fit: contain; /* Prevents cropping */
+    border-radius: 8px;
+    transition: transform 0.5s ease-in-out;
+  }
+  

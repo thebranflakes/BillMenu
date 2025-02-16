@@ -32,6 +32,7 @@
   font-weight: bold;
   font-size: 44px;
   white-space: nowrap; /* Prevent wrapping */
+  text-shadow: -1px -1px 0 #42823d, 1px -1px 0 #42823d, -1px 1px 0 #42823d, 1px 1px 0 #42823d;
 }
 
 .addons .cream-cheese-section {
@@ -66,15 +67,34 @@
 }
 
 .cream-cheese-item {
+  position: relative;
   display: flex;
+  text-align: left;
   justify-content: space-between; /* Space between name and price */
   align-items: center;
-  font-size: 18px; /* Adjust size for visibility */
+  font-size: 22px; /* Adjust size for visibility */
   font-family: 'Chicle', sans-serif;
 }
 
 .cream-cheese-item .dots {
   flex: 1;
-  border-bottom: 1px dotted black; /* Dotted line */
+  border-bottom: 2px dotted black; /* Dotted line */
   margin: 0 10px; /* Spacing between name and price */
+}
+
+.cream-cheese-item.out-of-stock {
+  color: gray;
+}
+
+/* Sold Out Overlay */
+.cream-cheese-item.out-of-stock .sold-out-overlay {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  width: 80px; /* Adjust size as needed */
+  height: auto;
+  opacity: 0.8; /* Slight transparency */
+  z-index: 1;
+  pointer-events: none;
 }

@@ -22,7 +22,7 @@
 
 .coffee .section-title {
   position: absolute;
-  top: 5px; /* Adjust title position */
+  top: 4px;
   left: 50%;
   transform: translateX(-50%);
   background: #E6F4E6;
@@ -30,7 +30,8 @@
   font-family: 'Chicle', sans-serif;
   font-weight: bold;
   font-size: 44px;
-  white-space: nowrap; /* Prevent wrapping */
+  white-space: nowrap;
+  text-shadow: -1px -1px 0 #42823d, 1px -1px 0 #42823d, -1px 1px 0 #42823d, 1px 1px 0 #42823d; /* Outlined Effect */
 }
 
 .coffee .extras-list {
@@ -41,57 +42,34 @@
 }
 
 .coffee .extras-item {
-  font-size: 44px;
+  font-size: 20px;
   font-family: 'Chicle', sans-serif;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 5px 0;
   margin-left: 0; /* No indentation for main items */
 }
 
-.coffee .extras-item span {
-  white-space: nowrap; /* Prevent wrapping */
-}
-
 .coffee .extras-item .dots {
-  flex-grow: 1; /* Allow dots to fill the space */
-  border-bottom: 1px dotted black; /* Add dotted line for alignment */
-  margin: 0 10px; /* Space between name and price */
-  height: 1px; /* Keep line thin */
+  flex-grow: 1;
+  border-bottom: 2px dotted black;
+  margin: 5px 10px 0; /* Adjusted margin to lower dots */
+  height: 1px;
 }
 
 .coffee .sub-item {
-  font-size: 24px; /* Slightly smaller font for sub-items */
+  font-size: 18px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 5px 0;
   margin-left: 20px; /* Indent sub-items */
 }
 
-.coffee .extras-item,
-.coffee .sub-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 16px; /* Adjust as needed */
-  padding: 4px 0; /* Add some spacing */
-}
-
-.coffee .extras-item span:first-child,
-.coffee .sub-item span:first-child {
-  flex-grow: 1; /* Ensures the dots span the available space */
-  text-align: left;
-}
-
-.coffee .extras-item span:last-child,
-.coffee .sub-item span:last-child {
-  text-align: right;
-}
-
-.coffee .extras-item span.dots,
-.coffee .sub-item span.dots {
-  flex-grow: 1; /* Adjusts to fill the gap */
-  border-bottom: 1px dotted black;
-  margin: 0 8px; /* Adds space around the dots */
-  height: 1px; /* Ensures the dots align properly */
+.coffee .sub-item .dots {
+  flex-grow: 1;
+  border-bottom: 2px dotted black;
+  margin: 5px 10px 0; /* Lowered dots */
+  height: 1px;
 }
