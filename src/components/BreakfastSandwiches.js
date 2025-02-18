@@ -39,7 +39,7 @@ const BreakfastSandwiches = ({ sandwiches, meats, cheeses }) => {
 
       <div className="additional-info">
         <span>All sandwiches come with House Aioli.</span>
-        <span>Salt, Pepper & Ketchup Available.</span>
+        <span>Salt, Pepper, Ketchup & Hot Sauce Available.</span>
       </div>
 
       </div>
