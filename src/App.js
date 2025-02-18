@@ -72,22 +72,22 @@ const App = () => {
         element={
           <div className="parent-grid">
             <div className="bagels section-card">
-              <BagelsRow bagels={menuData.bagels} bagelPrices={menuData.bagelPrices} />
+              <BagelsRow />
             </div>
             <div className="logo section-card">
               <Logo />
             </div>
             <div className="breakfast section-card">
-              <BreakfastSandwiches sandwiches={menuData.breakfastSandwiches} meats={menuData.meats} cheeses={menuData.cheeses} />
+              <BreakfastSandwiches />
             </div>
             <div className="addons section-card">
-              <CreamCheeseAndAddOns creamCheeseAndMore={menuData.creamCheeseAndMore} toppings={menuData.toppings} />
+              <CreamCheeseAndAddOns toppings={menuData.toppings} />
             </div>
             <div className="coffee section-card">
-              <CoffeeAndShirts extras={menuData.extras} />
+              <CoffeeAndShirts />
             </div>
             <div className="premium section-card">
-              <PremiumSandwiches sandwiches={menuData.premiumSandwiches} />
+              <PremiumSandwiches />
             </div>
           </div>
         }

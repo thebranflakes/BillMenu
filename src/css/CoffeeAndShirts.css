@@ -73,3 +73,20 @@
   margin: 5px 10px 0; /* Lowered dots */
   height: 1px;
 }
+
+.coffee .extras-item.out-of-stock {
+  position: relative;
+  color: gray; /* Fade text for sold-out items */
+}
+
+.coffee .extras-item.out-of-stock .sold-out-overlay {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translate(-50%, -50%); /* Ensure centering */
+  width: 80px; /* Adjust width as needed */
+  height: auto;
+  z-index: 2; /* Ensure it appears above text */
+  pointer-events: none; /* Prevent interaction */
+  opacity: 0.8; /* Slight transparency */
+}

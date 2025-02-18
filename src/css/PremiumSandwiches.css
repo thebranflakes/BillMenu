@@ -17,7 +17,7 @@
   background-color: #E6F4E6;
   border: 2px solid black;
   border-radius: 12px;
-  padding: 17px; /* Slightly less padding */
+  padding: 17px;
   box-sizing: border-box;
 }
 
@@ -30,16 +30,15 @@
   padding: 0 8px;
   font-family: 'Chicle', sans-serif;
   font-weight: bold;
-  font-size: 38px; /* Reduced title size */
+  font-size: 38px;
   white-space: nowrap;
   text-shadow: -1px -1px 0 #42823d, 1px -1px 0 #42823d, -1px 1px 0 #42823d, 1px 1px 0 #42823d;
-
 }
 
 .premium-sandwiches {
   display: flex;
   flex-direction: column;
-  gap: 4px; /* Reduce gap between sandwiches */
+  gap: 4px;
   width: 100%;
   padding: 5px 0;
 }
@@ -51,27 +50,28 @@
   border-radius: 12px;
   text-align: left;
   font-family: 'Chicle', sans-serif;
-  width: 100%; /* Changed from 85% to 100% */
-  box-sizing: border-box; /* Ensures it respects the section size */
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
 }
 
 .sandwich-card h3 {
   font-size: 20px;
   font-family: 'Chicle', sans-serif;
-  margin-bottom: 2px; /* Less gap below title */
+  margin-bottom: 2px;
 }
 
 .sandwich-card p {
   font-size: 15px;
   color: #333;
-  margin: 3px 0; /* Reduce space above and below text */
+  margin: 3px 0;
   max-width: 90%;
 }
 
 .sandwich-options {
   list-style: none;
   padding: 0;
-  margin-top: 2px; /* Bring options closer to description */
+  margin-top: 2px;
 }
 
 .sandwich-options li {
@@ -79,12 +79,29 @@
   font-weight: bold;
   display: flex;
   justify-content: space-between;
-  padding: 1px 0; /* Tighten spacing between options */
-  line-height: 1.1; /* Reduce line-height to remove extra vertical space */
+  padding: 1px 0;
+  line-height: 1.1;
 }
 
 .sandwich-options .dots {
   flex: 1;
-  border-bottom: 2px dotted black; /* Dotted line */
-  margin: 0 10px; /* Spacing between name and price */
+  border-bottom: 2px dotted black;
+  margin: 0 10px;
+}
+
+.sandwich-card.out-of-stock {
+  color: gray; /* Grays out text */
+  position: relative;
+}
+
+.sandwich-card.out-of-stock .sold-out-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 55%;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.8;
 }

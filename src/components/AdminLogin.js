@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
 
 const AdminLogin = ({ setIsAuthenticated }) => {
   const [password, setPassword] = useState("");
 
   const handleLogin = async () => {
-    const response = await fetch("http://localhost:5000/api/admin/login", {
+    const response = await fetch(`${API_BASE_URL}/api/admin/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ password }),
@@ -14,7 +16,7 @@ const AdminLogin = ({ setIsAuthenticated }) => {
     if (response.ok) {
       alert("✅ Login Successful!");
       localStorage.setItem("isAuthenticated", "true");
-      setIsAuthenticated(true); // Update state to show admin panel
+      setIsAuthenticated(true); 
     } else {
       alert("❌ Incorrect Password!");
     }

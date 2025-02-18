@@ -27,11 +27,11 @@
   .logo-section {
     display: flex;
     justify-content: center;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
   }
   
   .logo img {
-    width: 100%;
+    width: 90%;
     max-width: 275px; /* Adjust based on your needs */
   }
   
@@ -40,7 +40,7 @@
     justify-content: space-around; /* Ensure even spacing */
     align-items: center;
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
     padding: 10px 0;
     gap: 40px; /* Increase spacing between items */
   }

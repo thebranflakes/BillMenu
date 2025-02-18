@@ -1,40 +1,34 @@
-import React from 'react';
-import '../css/BagelsRow.css';
-import soldOutImage from '../assets/soldout.png';
+import React, { useEffect, useState } from "react";
+import "../css/BagelsRow.css";
+import soldOutImage from "../assets/soldout.png";
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
-const BagelsRow = ({ bagels, bagelPrices }) => {
-  if (!bagels || bagels.length === 0) return <p>No bagels available</p>;
+const BagelsRow = () => {
+  const [bagels, setBagels] = useState([]);
+
+  useEffect(() => {
+    fetch(`${API_BASE_URL}/api/bagels`) // ✅ Uses environment variable for API base URL
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! Status: ${res.status}`);
+        }
+        return res.json();
+      })
+      .then((data) => setBagels(data))
+      .catch((err) => console.error("Error fetching bagels:", err));
+  }, []);
+
+  if (!bagels.length) return <p>Loading bagels...</p>;
 
   return (
     <div className="section-card">
       <div className="section-title">Bagels</div>
 
-      {/* Bagel Pricing Section */}
-      <div className="bagels-pricing-container">
-        <div className="bagels-pricing">
-          {bagelPrices.map((price, index) => (
-            <span key={index} className="bagel-price-item">
-              {price.name} - ${price.price.toFixed(2)}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* Bagel List */}
       <ul className="bagels-list">
         {bagels.map((bagel, index) => (
-          <li
-            key={index}
-            className={`bagel-item ${bagel.stock !== 1 ? 'out-of-stock' : ''}`}
-          >
+          <li key={index} className={`bagel-item ${bagel.stock !== 1 ? "out-of-stock" : ""}`}>
             {bagel.name}
-            {bagel.stock !== 1 && (
-              <img
-                src={soldOutImage}
-                alt="SOLD OUT"
-                className="sold-out-overlay"
-              />
-            )}
+            {bagel.stock !== 1 && <img src={soldOutImage} alt="SOLD OUT" className="sold-out-overlay" />}
           </li>
         ))}
       </ul>

@@ -156,3 +156,41 @@
   text-align: center;
   margin: 0 auto;
 }
+
+/* SOLD OUT Styling for Sandwiches */
+.breakfast .sandwich-item.out-of-stock {
+  color: gray;
+  position: relative;
+}
+
+.breakfast .sandwich-item.out-of-stock .sold-out-overlay {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  width: 80px; /* Adjusted size */
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+/* SOLD OUT Styling for Meats & Cheeses */
+.breakfast .meat-item.out-of-stock,
+.breakfast .cheese-item.out-of-stock {
+  color: gray;
+  position: relative;
+}
+
+.breakfast .meat-item.out-of-stock .sold-out-overlay-small,
+.breakfast .cheese-item.out-of-stock .sold-out-overlay-small {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px; /* Smaller overlay for meats & cheeses */
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.8;
+}

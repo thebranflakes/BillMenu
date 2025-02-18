@@ -9,8 +9,8 @@ app.use(express.json());
 app.use(cors());
 
 const corsOptions = {
-  origin: "http://localhost:3000",
-  methods: ["GET", "POST"],
+  origin: ["https://billsmenu-9031464cc2b6.herokuapp.com", "http://localhost:3000"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
 };
 app.use(cors(corsOptions));
@@ -44,6 +44,93 @@ app.post("/api/admin/login", (req, res) => {
     } else {
       res.status(401).json({ message: "Incorrect password!" });
     }
+  });
+});
+
+app.get("/api/bagels", (req, res) => {
+  db.query("SELECT * FROM bb_bagels WHERE visible = 1", (err, results) => {
+    if (err) return res.status(500).json({ message: "Database error", error: err });
+    res.json(results);
+  });
+});
+
+// Get All Cream Cheese & More
+app.get("/api/cream_cheese", (req, res) => {
+  db.query("SELECT * FROM bb_cream_cheese WHERE visible = 1", (err, results) => {
+    if (err) return res.status(500).json({ message: "Database error", error: err });
+    res.json(results);
+  });
+});
+
+// Get All Toppings
+app.get("/api/toppings", (req, res) => {
+  db.query("SELECT * FROM bb_toppings", (err, results) => {
+    if (err) return res.status(500).json({ message: "Database error", error: err });
+    res.json(results);
+  });
+});
+
+// Get All Breakfast Sandwiches
+app.get("/api/breakfast_sandwiches", (req, res) => {
+  db.query("SELECT * FROM bb_breakfast_sandwiches WHERE visible = 1", (err, results) => {
+    if (err) return res.status(500).json({ message: "Database error", error: err });
+    res.json(results);
+  });
+});
+
+
+// Get All Meats
+app.get("/api/meats", (req, res) => {
+  db.query("SELECT * FROM bb_meats WHERE visible = 1", (err, results) => {
+    if (err) return res.status(500).json({ message: "Database error", error: err });
+    res.json(results);
+  });
+});
+
+// Get All Cheeses
+app.get("/api/cheeses", (req, res) => {
+  db.query("SELECT * FROM bb_cheeses WHERE visible = 1", (err, results) => {
+    if (err) return res.status(500).json({ message: "Database error", error: err });
+    res.json(results);
+  });
+});
+
+app.get("/api/premium_sandwiches", (req, res) => {
+  const querySandwiches = "SELECT * FROM bb_premium_sandwiches WHERE visible = 1";
+  const queryOptions = "SELECT * FROM bb_premium_sandwich_options WHERE visible = 1";
+
+  db.query(querySandwiches, (err, sandwiches) => {
+    if (err) return res.status(500).json({ message: "Database error", error: err });
+
+    db.query(queryOptions, (err, options) => {
+      if (err) return res.status(500).json({ message: "Database error", error: err });
+
+      // Merge sandwiches with their options
+      const sandwichesWithOptions = sandwiches.map(sandwich => {
+        return {
+          ...sandwich,
+          options: options.filter(option => option.sandwich_id === sandwich.id),
+        };
+      });
+
+      res.json(sandwichesWithOptions);
+    });
+  });
+});
+
+// Get All Extras
+app.get("/api/extras", (req, res) => {
+  db.query("SELECT * FROM bb_extras WHERE visible = 1", (err, results) => {
+    if (err) return res.status(500).json({ message: "Database error", error: err });
+    res.json(results);
+  });
+});
+
+// Get All Bagel Prices
+app.get("/api/bagel_prices", (req, res) => {
+  db.query("SELECT * FROM bb_bagel_prices WHERE visible = 1", (err, results) => {
+    if (err) return res.status(500).json({ message: "Database error", error: err });
+    res.json(results);
   });
 });
 

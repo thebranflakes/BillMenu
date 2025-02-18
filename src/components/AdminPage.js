@@ -7,7 +7,6 @@ const AdminPage = () => {
   useEffect(() => {
     console.log("✅ AdminPage Component Mounted!");
 
-    // Check if user is already authenticated
     if (localStorage.getItem("isAuthenticated") === "true") {
       setIsAuthenticated(true);
     }

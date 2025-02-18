@@ -4,7 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../css/BagelCarousel.css';
 
-// Dynamically load all bagel images
+
 const importAll = (r) => r.keys().map(r);
 const images = importAll(require.context('../assets/bagels', false, /\.(png|jpe?g|svg)$/));
 
