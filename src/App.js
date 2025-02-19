@@ -9,7 +9,6 @@ import PremiumSandwiches from "./components/PremiumSandwiches";
 import CoffeeAndShirts from "./components/CoffeeAndShirts";
 import AdminPage from "./components/AdminPage";
 import Logo from "./components/Logo";
-import { menuData } from "./data";
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -81,7 +80,7 @@ const App = () => {
               <BreakfastSandwiches />
             </div>
             <div className="addons section-card">
-              <CreamCheeseAndAddOns toppings={menuData.toppings} />
+              <CreamCheeseAndAddOns />
             </div>
             <div className="coffee section-card">
               <CoffeeAndShirts />
