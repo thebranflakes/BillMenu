@@ -5,22 +5,34 @@ const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 const AdminLogin = ({ setIsAuthenticated }) => {
   const [password, setPassword] = useState("");
 
-  const handleLogin = async () => {
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
+const handleLogin = async () => {
+  try {
     const response = await fetch(`${API_BASE_URL}/api/admin/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ password }),
+      credentials: "include", // Important: Ensures cookies are sent!
     });
 
-    const data = await response.json();
-    if (response.ok) {
-      alert("✅ Login Successful!");
-      localStorage.setItem("isAuthenticated", "true");
-      setIsAuthenticated(true); 
-    } else {
-      alert("❌ Incorrect Password!");
+    if (!response.ok) {
+      const data = await response.json();
+      alert(`❌ Login Failed: ${data.message}`);
+      return;
     }
-  };
+
+    alert("✅ Login Successful!");
+    setIsAuthenticated(true); // Re-render component
+  } catch (error) {
+    console.error("Login error:", error);
+    alert("🔴 Login request failed.");
+  }
+};
+
+  
+  
+  
 
   return (
     <div className="login-container">

@@ -1,0 +1,79 @@
+.add-item-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #E6F4E6;
+    border-radius: 12px;
+    border: 2px solid black;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: "Arial", sans-serif;
+  }
+  
+  .add-item-container h2 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: -1px -1px 0 #42823d, 1px -1px 0 #42823d, -1px 1px 0 #42823d, 1px 1px 0 #42823d;
+  }
+  
+  .add-item-container label {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+  }
+  
+  .add-item-container select,
+  .add-item-container input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #333;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+  
+  .add-item-container button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .add-item-container button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .add-item-container button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  .add-item-container .back-btn {
+    background-color: #ff4c4c;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .add-item-container .back-btn:hover {
+    background-color: #d43f3f;
+  }
+
+.add-item-container select,
+.add-item-container input {
+  width: 100%; /* Ensure both input and dropdown have the same width */
+  max-width: 100%; /* Prevent overflow */
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box; /* Prevent extra width from padding */
+}
+
+  

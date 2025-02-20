@@ -1,0 +1,135 @@
+/* 🔹 Admin Section Styles */
+.admin-section {
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 12px;
+    background-color: #e6f4e6;
+    margin-bottom: 20px; /* Space between tables */
+}
+
+/* 🔹 Universal Table Styles */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-family: 'Chicle', sans-serif;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+/* 🔹 Universal Button Styling */
+.admin-table button {
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    padding: 5px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* 🟢 Visibility Toggle Buttons */
+.visibility-toggle.visible {
+    background-color: green;
+    color: white;
+}
+
+.visibility-toggle.hidden {
+    background-color: darkred;
+    color: white;
+}
+
+/* 🔄 Stock Toggle Buttons */
+.stock-toggle {
+    width: 100px;
+}
+
+.stock-toggle.button-in-stock {
+    background-color: green;
+    color: white;
+}
+
+.stock-toggle.button-out-of-stock {
+    background-color: darkred;
+    color: white;
+}
+
+/* 🗑️ Delete Button */
+.delete-button {
+    background-color: darkred;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100px;
+    height: 40px;
+}
+
+.premium-sandwich-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .premium-sandwich-group {
+    background: #e6f4e6;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid black;
+  }
+  
+  .premium-sandwich-group h3 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  
+  .admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  
+  .admin-table th,
+  .admin-table td {
+    padding: 10px;
+    border: 1px solid black;
+  }
+  
+  .visibility-toggle,
+  .delete-button {
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .delete-button {
+    background-color: darkred;
+    color: white;
+  }
+  
+  .premium-sandwich-options-section h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    background-color: rgba(66, 130, 61, 0.8); /* Green background */
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  

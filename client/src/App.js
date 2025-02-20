@@ -8,7 +8,9 @@ import BreakfastSandwiches from "./components/BreakfastSandwiches";
 import PremiumSandwiches from "./components/PremiumSandwiches";
 import CoffeeAndShirts from "./components/CoffeeAndShirts";
 import AdminPage from "./components/AdminPage";
+import AddItem from "./components/AddItem";
 import Logo from "./components/Logo";
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -23,7 +25,7 @@ const App = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/admin/login", {
+      const response = await fetch(`${API_BASE_URL}/api/admin/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ password }),
@@ -66,6 +68,9 @@ const App = () => {
           )
         }
       />
+
+      <Route path="/admin/add-item" element={<AddItem />} />
+
       <Route
         path="/"
         element={

@@ -64,14 +64,15 @@
 
 .bagels .bagel-item.out-of-stock .sold-out-overlay {
   position: absolute;
-  top: 50%; /* Center the image */
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Adjust for centering */
-  width: 100%; /* Adjust the width to fit the parent */
+  transform: translate(-50%, -50%);
+  width: auto;  /* Set a fixed width */
   height: auto; /* Maintain aspect ratio */
+  max-width: 100px; /* Prevent overflow */
   z-index: 1;
-  pointer-events: none; /* Allow clicks to pass through */
-  opacity: 0.8; /* Slight transparency for visibility */
+  pointer-events: none;
+  opacity: 0.8;
 }
 
 .bagels-pricing-container {

@@ -1,0 +1,70 @@
+.bagels-section {
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 12px;
+    background-color: #e6f4e6;
+  }
+  
+  .bagels-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-family: 'Chicle', sans-serif;
+  }
+  
+  .bagels-table th,
+  .bagels-table td {
+    padding: 10px;
+    border: 1px solid black;
+  }
+  
+  .visibility-toggle {
+    width: 100px;
+  }
+  
+  .visibility-toggle.visible {
+    background-color: green;
+  }
+  
+  .visibility-toggle.hidden {
+    background-color: darkred;
+  }
+  
+  .stock-toggle {
+    width: 100px; /* Ensuring uniform button width */
+  }
+  
+  .button-in-stock {
+    background-color: green;
+    color: black;
+    
+  }
+  
+  .button-out-of-stock {
+    background-color: darkred;
+    color: black;
+  }
+
+  .delete-button {
+    background-color: darkred;
+    color: white;
+    width: 100px; /* Same width as others */
+    height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .bagels-table button {
+    width: 100px;  /* Fixed width */
+    height: 40px;  /* Fixed height */
+    font-size: 16px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    padding: 5px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
