@@ -71,9 +71,36 @@ app.post("/api/admin/login", (req, res) => {
 });
 
 app.post("/api/admin/logout", (req, res) => {
-  res.clearCookie("adminToken", { path: "/" });
-  res.json({ message: "Logged out successfully" });
+  // Destroy session if using express-session
+  if (req.session) {
+    req.session.destroy((err) => {
+      if (err) {
+        return res.status(500).json({ message: "Logout failed" });
+      }
+      
+      // Clear the authentication cookie
+      res.clearCookie("adminToken", {
+        httpOnly: true, // Ensure it matches how it was set
+        secure: process.env.NODE_ENV === "production", // Secure only in production
+        sameSite: "strict",
+        path: "/",
+      });
+
+      return res.json({ message: "Logged out successfully" });
+    });
+  } else {
+    // If no session, still clear the cookie
+    res.clearCookie("adminToken", {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "strict",
+      path: "/",
+    });
+    
+    res.json({ message: "Logged out successfully" });
+  }
 });
+
 
 // 🔹 API Routes
 const apiRoutes = [

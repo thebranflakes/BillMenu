@@ -9,33 +9,42 @@ const CreamCheeseAndAddOns = () => {
   const [toppings, setToppings] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Fetch Cream Cheese & Toppings Data from API
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const [creamCheeseRes, toppingsRes] = await Promise.all([
-          fetch(`${API_BASE_URL}/api/cream_cheese`),
-          fetch(`${API_BASE_URL}/api/toppings`)
-        ]);
-  
-        if (!creamCheeseRes.ok || !toppingsRes.ok) {
-          throw new Error(`API error: ${creamCheeseRes.status} & ${toppingsRes.status}`);
-        }
-  
-        const [creamCheeseData, toppingsData] = await Promise.all([
-          creamCheeseRes.json(),
-          toppingsRes.json()
-        ]);
-  
-        setCreamCheese(creamCheeseData);
-        setToppings(toppingsData);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching data:", error);
+  // Function to fetch Cream Cheese & Toppings Data
+  const fetchData = async () => {
+    try {
+      const [creamCheeseRes, toppingsRes] = await Promise.all([
+        fetch(`${API_BASE_URL}/api/cream_cheese`),
+        fetch(`${API_BASE_URL}/api/toppings`)
+      ]);
+
+      if (!creamCheeseRes.ok || !toppingsRes.ok) {
+        throw new Error(`API error: ${creamCheeseRes.status} & ${toppingsRes.status}`);
       }
-    };
-  
+
+      const [creamCheeseData, toppingsData] = await Promise.all([
+        creamCheeseRes.json(),
+        toppingsRes.json()
+      ]);
+
+      setCreamCheese(creamCheeseData);
+      setToppings(toppingsData);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    // Fetch immediately on mount
     fetchData();
+
+    // Set up polling every 30 seconds
+    const intervalId = setInterval(() => {
+      fetchData();
+    }, 30000); // 30 seconds
+
+    // Cleanup interval on unmount
+    return () => clearInterval(intervalId);
   }, []);
 
   if (loading) return <p>Loading...</p>;

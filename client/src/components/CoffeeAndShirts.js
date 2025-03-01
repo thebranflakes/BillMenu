@@ -6,18 +6,37 @@ const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 const CoffeeAndExtras = () => {
   const [extras, setExtras] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  // Function to fetch extras data from the API
+  const fetchExtras = async () => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/extras`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const data = await response.json();
+      setExtras(data);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching extras:", error);
+    }
+  };
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/api/extras`) 
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then(data => setExtras(data))
-      .catch(error => console.error("Error fetching extras:", error));
+    // Fetch immediately on mount
+    fetchExtras();
+
+    // Set up polling every 30 seconds
+    const intervalId = setInterval(() => {
+      fetchExtras();
+    }, 30000); // 30 seconds
+
+    // Cleanup interval on unmount
+    return () => clearInterval(intervalId);
   }, []);
+
+  if (loading) return <p>Loading...</p>;
 
   return (
     <div className="section-card">
@@ -73,9 +92,8 @@ const CoffeeAndExtras = () => {
 
       <br />
       <br />
-      <br />
 
-      <BagelCarousel />
+      <BagelCarousel /> 
     </div>
   );
 };

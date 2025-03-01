@@ -3,15 +3,14 @@
   grid-template-areas:
     "bagels logo breakfast"
     "addons coffee premium";
-  grid-template-columns: 2fr 2fr 2fr; /* Adjust column proportions */
-  grid-template-rows: 1fr 1fr; /* Make both rows equal height */
-  gap: 20px; /* Space between sections */
-  height: 100vh; /* Full viewport height */
-  width: 100vw; /* Full viewport width */
+  grid-template-columns: repeat(3, minmax(200px, 1fr)); /* Allow flexibility */
+  grid-template-rows: repeat(2, minmax(200px, auto)); /* Flexible row height */
+  gap: 20px;
+  height: 100vh;
+  width: 100vw;
   padding: 20px;
-  box-sizing: border-box; /* Include padding and borders in width/height */
+  box-sizing: border-box;
 }
-
 /* Assigning areas */
 .bagels {
   grid-area: bagels;
@@ -58,7 +57,7 @@
   background-color: #E6F4E6;
   padding: 0 10px;
   font-weight: bold;
-  font-size: 44px; /* Matches Bagels font size */
+  font-size: clamp(24px, 3vw, 44px); /* Adapts font size based on viewport */
   line-height: 1;
   z-index: 1;
   white-space: nowrap;
@@ -84,9 +83,18 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
 }
 
+
 @font-face {
   font-family: 'Chicle';
   src: url('../fonts/Chicle-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
 }

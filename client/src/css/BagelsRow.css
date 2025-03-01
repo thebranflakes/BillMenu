@@ -25,7 +25,7 @@
 }
 
 .bagels .section-title {
-  font-size: 44px;
+  font-size: clamp(20px, 3vw, 38px);
   font-weight: bold;
   font-family: 'Chicle', sans-serif;
   margin-top: 20px;
@@ -48,9 +48,15 @@
   height: 100%; /* Stretch to fill available height */
 }
 
+@media (max-width: 768px) {
+  .parent-grid {
+    grid-template-columns: 1fr; /* Stack items vertically on small screens */
+  }
+}
+
 .bagels .bagel-item {
   position: relative;
-  font-size: 24px;
+  font-size: clamp(16px, 1vw, 20px);
   font-weight: bold;
   text-align: center;
   color: black;

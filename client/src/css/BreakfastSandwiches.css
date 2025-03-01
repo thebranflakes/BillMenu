@@ -22,6 +22,24 @@
   gap: 10px;
   padding: 15px;
   box-sizing: border-box;
+  overflow: hidden;
+}
+
+h2, h3, p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 95%; /* Prevents breaking layout */
+}
+
+p {
+  line-height: clamp(1.2, 2vw, 1.5);
+}
+
+@media (max-width: 768px) {
+  .parent-grid {
+    grid-template-columns: 1fr; /* Stack items vertically on small screens */
+  }
 }
 
 /* 🔹 Section Title (Breakfast Sandwiches) */
@@ -34,7 +52,7 @@
   padding: 0 12px;
   font-family: 'Chicle', sans-serif;
   font-weight: bold;
-  font-size: 44px;
+  font-size: clamp(20px, 3vw, 38px); /* Adjusts dynamically based on viewport */
   white-space: nowrap;
   text-shadow: -1px -1px 0 #42823d, 1px -1px 0 #42823d, -1px 1px 0 #42823d, 1px 1px 0 #42823d;
 }
@@ -44,10 +62,10 @@
   list-style: none;
   padding: 0;
   margin: 0 auto;
-  font-size: 22px;
+  font-size: clamp(16px, 1.25vw, 28px);
   text-align: left;
   font-family: 'Chicle', sans-serif;
-  width: 90%;
+  width: 100%;
   max-width: 600px;
 }
 
@@ -91,24 +109,24 @@
 
 .breakfast .meats-title {
   position: absolute;
-  top: -46px;
+  top: -28px;
   left: 50%;
   transform: translateX(-50%);
   background: #E6F4E6;
   padding: 0 12px;
-  font-size: 28px;
+  font-size: clamp(8px, 1.25vw, 20px);
   font-weight: bold;
   white-space: nowrap;
 }
 
 .breakfast .meats-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  grid-template-columns: repeat(3, 1fr); /* Two columns */
   gap: 5px 20px; /* Space between items */
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: 18px;
+  font-size: clamp(8px, 1vw, 28px);
   text-align: center;
 }
 
@@ -129,21 +147,24 @@
 
 .breakfast .cheeses-title {
   position: absolute;
-  top: -40px;
+  top: -28px;
   left: 50%;
   transform: translateX(-50%);
   background: #E6F4E6;
   padding: 0 10px;
-  font-size: 28px;
+  font-size: clamp(8px, 1.25vw, 20px);
   font-weight: bold;
   white-space: nowrap;
 }
 
 .breakfast .cheeses-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Two columns */
   list-style: none;
   padding: 10px;
   margin: 0;
-  font-size: 18px;
+  gap: 5px 20px;
+  font-size: clamp(8px, 1vw, 28px);
 }
 
 .breakfast .additional-info {

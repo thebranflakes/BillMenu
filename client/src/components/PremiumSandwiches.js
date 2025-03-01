@@ -7,23 +7,32 @@ const PremiumSandwiches = () => {
   const [sandwiches, setSandwiches] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchSandwiches = async () => {
-      try {
-        const response = await fetch(`${API_BASE_URL}/api/premium_sandwiches`);
-        if (!response.ok) {
-          throw new Error(`Failed to fetch sandwiches, status: ${response.status}`);
-        }
-        const data = await response.json();
-        setSandwiches(data);
-      } catch (error) {
-        console.error("Error fetching premium sandwiches:", error);
-      } finally {
-        setLoading(false);
+  // Function to fetch sandwiches data
+  const fetchSandwiches = async () => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/premium_sandwiches`);
+      if (!response.ok) {
+        throw new Error(`Failed to fetch sandwiches, status: ${response.status}`);
       }
-    };
-  
+      const data = await response.json();
+      setSandwiches(data);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching premium sandwiches:", error);
+    }
+  };
+
+  useEffect(() => {
+    // Fetch immediately on mount
     fetchSandwiches();
+
+    // Set up polling every 30 seconds
+    const intervalId = setInterval(() => {
+      fetchSandwiches();
+    }, 30000); // 30 seconds
+
+    // Cleanup interval on unmount
+    return () => clearInterval(intervalId);
   }, []);
 
   if (loading) {
@@ -60,10 +69,10 @@ const PremiumSandwiches = () => {
             {/* Sold Out Overlay */}
             {sandwich.stock === 0 && (
               <img
-              src={soldOutImage}
-              alt="SOLD OUT"
-              className="sold-out-overlay"
-            />
+                src={soldOutImage}
+                alt="SOLD OUT"
+                className="sold-out-overlay"
+              />
             )}
           </div>
         ))}

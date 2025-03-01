@@ -9,36 +9,45 @@ const BreakfastSandwiches = () => {
   const [cheeses, setCheeses] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // Function to fetch data from the API
+  const fetchData = async () => {
+    try {
+      const [sandwichesRes, meatsRes, cheesesRes] = await Promise.all([
+        fetch(`${API_BASE_URL}/api/breakfast_sandwiches`),
+        fetch(`${API_BASE_URL}/api/meats`),
+        fetch(`${API_BASE_URL}/api/cheeses`),
+      ]);
+
+      if (!sandwichesRes.ok || !meatsRes.ok || !cheesesRes.ok) {
+        throw new Error("One or more requests failed.");
+      }
+
+      const [sandwichesData, meatsData, cheesesData] = await Promise.all([
+        sandwichesRes.json(),
+        meatsRes.json(),
+        cheesesRes.json(),
+      ]);
+
+      setSandwiches(sandwichesData);
+      setMeats(meatsData);
+      setCheeses(cheesesData);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const [sandwichesRes, meatsRes, cheesesRes] = await Promise.all([
-          fetch(`${API_BASE_URL}/api/breakfast_sandwiches`),
-          fetch(`${API_BASE_URL}/api/meats`),
-          fetch(`${API_BASE_URL}/api/cheeses`),
-        ]);
-  
-        if (!sandwichesRes.ok || !meatsRes.ok || !cheesesRes.ok) {
-          throw new Error("One or more requests failed.");
-        }
-  
-        const [sandwichesData, meatsData, cheesesData] = await Promise.all([
-          sandwichesRes.json(),
-          meatsRes.json(),
-          cheesesRes.json(),
-        ]);
-  
-        setSandwiches(sandwichesData);
-        setMeats(meatsData);
-        setCheeses(cheesesData);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-  
+    // Fetch immediately on mount
     fetchData();
+
+    // Set up polling every 30 seconds
+    const intervalId = setInterval(() => {
+      fetchData();
+    }, 30000); // 30 seconds
+
+    // Cleanup interval on unmount
+    return () => clearInterval(intervalId);
   }, []);
 
   if (loading) return <p>Loading...</p>;
@@ -47,8 +56,7 @@ const BreakfastSandwiches = () => {
     <div className="section-card">
       <div className="section-title">Breakfast Sandwiches</div>
 
-
-      <br></br>
+      <br />
 
       <ul className="sandwich-list">
         {sandwiches.map((sandwich, index) => (

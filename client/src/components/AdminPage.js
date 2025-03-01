@@ -44,13 +44,25 @@ const AdminPage = () => {
       <h2 className="admin-title">Admin Panel</h2>
   
       <div className="admin-header">
-        <button className="logout-btn" onClick={() => {
-          document.cookie = "adminToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-          setIsAuthenticated(false);
-          window.location.href = "/admin";
-        }}>
-          Logout
-        </button>
+      <button className="logout-btn" onClick={async () => {
+        try {
+          const response = await fetch(`${API_BASE_URL}/api/admin/logout`, {
+            method: "POST",
+            credentials: "include", // ✅ Ensures cookies are sent with request
+          });
+
+          if (response.ok) {
+            setIsAuthenticated(false);
+            window.location.href = "/admin"; // ✅ Redirects to login page
+          } else {
+            console.error("Logout failed");
+          }
+        } catch (error) {
+          console.error("Error logging out:", error);
+        }
+      }}>
+        Logout
+      </button>
   
         <button className="add-item-btn" onClick={() => navigate("/admin/add-item")}>
           ➕ Add New Item
